@@ -1,11 +1,14 @@
-import {useState, useEffect} from 'react';
 import './App.css';
+import React, {useState, useEffect} from 'react';
 import Restaurants from './components/Restaurant-main.js'
 import Critics from './components/Critics-main.js'
 import Reviews from './components/Review-main.js'
+import NavBar from "./components/Navigation-Bar"
+import ReviewForm from "./components/Review-Form"
 import {Switch, Route} from 'react-router-dom'
 
 function App() {
+
   const [restaurantData, setRestaurantData ] = useState([])
   useEffect(() => {
     fetch("http://localhost:9292/restaurants")
@@ -19,25 +22,26 @@ function App() {
     .then((r) => r.json())
     .then((criticsData) => setCriticsData(criticsData));
   },[])
-
-  console.log(criticsData)
   
+  const addNewReview = (newReview) => {
+		setCriticsData([...setCriticsData, newReview])
+	}
+
   return (
     <div>
-      <Restaurants restaurantData = {restaurantData}/>
-      <Critics/>
-      <Reviews/>
-    <button> Does it work </button>
-    {/* <NavigationBar> */}
+    <NavBar/>
       <Switch>
         <Route exact path="/">
-          <Restaurants/>
+          <Restaurants restaurantData = {restaurantData}/>
         </Route>
         <Route exact path="/critics">
-          <Critics/>
+          <Critics criticsData = {criticsData}/>
         </Route>
         <Route exact path="/reviews">
           <Reviews/>
+        </Route>
+        <Route exact path="/review-form">
+          <ReviewForm addNewReview={addNewReview}/>
         </Route>
       </Switch>
     </div>
