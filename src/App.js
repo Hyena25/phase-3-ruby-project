@@ -28,17 +28,17 @@ function App() {
 	}
 
   return (
-    <div>
+    <div className="">
     <NavBar/>
       <Switch>
         <Route exact path="/">
           <Restaurants restaurantData = {restaurantData}/>
         </Route>
         <Route exact path="/critics">
-          <Critics criticsData = {criticsData}/>
+          <Critics />
         </Route>
         <Route exact path="/reviews">
-          <Reviews/>
+          <Reviews criticsAndReviewsData = {criticsData}/>
         </Route>
         <Route exact path="/review-form">
           <ReviewForm addNewReview={addNewReview}/>

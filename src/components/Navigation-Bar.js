@@ -12,24 +12,28 @@ const NavBar = () => {
         <div className="nav-container">
           <Link as={Link} to="/" className="nav-logo">
             Placeholder
-            <i className="fas fa-code"></i>
           </Link>
           <ul className={click ? "nav-menu active" : "nav-menu"}>
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <Link as={Link} to="/critics" className="nav-links" onClick={handleClick}>
                 Critics
               </Link>
-            </li>
+            </li> */}
             <li className="nav-item">
-              <Link as={Link} to="/reviews" className="nav-links" onClick={handleClick}>
+              <Link
+                as={Link}
+                to="/reviews"
+                className="nav-links"
+                onClick={handleClick}
+              >
                 Reviews
               </Link>
-              </li>
-            <li className="nav-item">
+            </li>
+            {/* <li className="nav-item">
               <Link as={Link} to="" className="nav-links" onClick={handleClick}>
                 Contact Us
               </Link>
-            </li>
+            </li> */}
           </ul>
           <div className="nav-icon" onClick={handleClick}>
             <i className={click ? "fas fa-times" : "fas fa-bars"}></i>

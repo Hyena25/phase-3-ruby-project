@@ -47,7 +47,7 @@ const ReviewForm = ({ addNewReview }) => {
             onChange={(e) => setReview(e.target.value)}
           />
           <br />
-          <input type="Submit" value="Add Review" className="button" />
+          <input type="Submit" value="Add Review" className="button"/>
         </form>
       </div>
     </div>
