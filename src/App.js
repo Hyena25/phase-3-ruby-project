@@ -27,6 +27,14 @@ function App() {
 		setCriticsData([...setCriticsData, newReview])
 	}
 
+  const removeReview = removedReview => {
+    const newReview = criticsData.filter(reviewAndCriticsObj => {
+        return removedReview.id !== reviewAndCriticsObj.id
+      })
+      setCriticsData(newReview)
+    fetch(`http://localhost:9292/critics/${removedReview.id}`, {method: "DELETE"} )
+    }
+
   return (
     <div className="">
     <NavBar/>
@@ -38,7 +46,7 @@ function App() {
           <Critics />
         </Route>
         <Route exact path="/reviews">
-          <Reviews criticsAndReviewsData = {criticsData}/>
+          <Reviews removeReview={removeReview} criticsAndReviewsData = {criticsData}/>
         </Route>
         <Route exact path="/review-form">
           <ReviewForm addNewReview={addNewReview}/>

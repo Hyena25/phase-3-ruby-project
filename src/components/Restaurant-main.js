@@ -1,12 +1,14 @@
-// import RestaurantCards from './Restaurant-cards'
+import React from "react";
+import RestaurantCards from "./Restaurant-cards"
 
 const Restaurants = ({ restaurantData }) => {
-  // console.log(restaurantData)
-  const restaurantNameDivs = restaurantData.map((restaurantObj) => {
-    return <div> {restaurantObj.name} </div>;
-  });
-
-  return <>{restaurantNameDivs}</>;
+  return (
+    <div className="movie-container">
+      {restaurantData.map((restaurantData) => (
+        <RestaurantCards restaurantData={restaurantData} />
+      ))}
+    </div>
+  )
 };
 
 export default Restaurants;
