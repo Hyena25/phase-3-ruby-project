@@ -12,11 +12,6 @@ const RestaurantCards = (( {restaurantData} ) => {
   const goToShowPage = () => { 
       history.push (`/restaurants/${restaurantData.id}`)
   }
-  
-  const [click, setClick] = useState(false);
-  
-  const handleClick = () => setClick(!click);
-  
     return (
         <div >
         <div onClick = {goToShowPage} className="media">

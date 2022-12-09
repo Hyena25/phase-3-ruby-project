@@ -14,7 +14,7 @@ function App() {
       .then((r) => r.json())
       .then((data) => setRestaurantData(data));
   }, []);
-  console.log(restaurantData.length > 0 ? restaurantData[0].reviews : "Use-effect has not fired yet")
+  //console.log(restaurantData.length > 0 ? restaurantData[0].reviews : "Use-effect has not fired yet")
 
   const [criticsData, setCriticsData] = useState([]);
   useEffect(() => {
@@ -63,7 +63,7 @@ function App() {
         </Route>
         <Route exact path="/reviews">
           <Reviews
-            reviewsData={reviewsData}
+            reviewsData={restaurantData}
             removeReview={removeReview}
             criticsData={criticsData}
             //different solution than just one route

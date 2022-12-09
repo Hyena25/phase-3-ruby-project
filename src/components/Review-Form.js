@@ -22,8 +22,8 @@ const ReviewForm = ({ addNewReview }) => {
   return (
     <div className="formContainer">
       <div className="form">
-        <h3>Add A Review</h3>
-        <form onSubmit={handleSubmit}>
+        <h3>Delete A Review </h3>
+        {/* <form onSubmit={handleSubmit}>
           <input
             label="review"
             placeholder="Review"
@@ -39,7 +39,7 @@ const ReviewForm = ({ addNewReview }) => {
 
           <br />
           <input type="Submit" value="Add Review" className="button" />
-        </form>
+        </form> */}
       </div>
     </div>
   );

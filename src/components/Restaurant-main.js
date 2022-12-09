@@ -4,7 +4,7 @@ import RestaurantCards from "./Restaurant-cards"
 const Restaurants = ({ restaurantData }) => {
   
   return (
-    <div className="movie-container">
+    <div className="restaurant-container">
       {restaurantData.map((restaurantData) => (
         <RestaurantCards restaurantData={restaurantData} />
       ))}

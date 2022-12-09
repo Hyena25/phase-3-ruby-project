@@ -5,10 +5,14 @@ import ReviewCard from "./Review-card";
 
 const Reviews = ({ reviewsData, criticsData, removeReview }) => {
   return (
-    <div className="movie-container">
+    <div className="restaurant-container">
       <ReviewForm />
       {criticsData.map((CARD) => (
-        <ReviewCard reviewsData = { reviewsData } removeReview = {removeReview} mapped={CARD} />
+        <ReviewCard
+          reviewsData={reviewsData}
+          removeReview={removeReview}
+          mapped={CARD}
+        />
       ))}
     </div>
   );
