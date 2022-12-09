@@ -1,18 +1,16 @@
 import React, { useState } from "react";
 
 const ReviewForm = ({ addNewReview }) => {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
   const [review, setReview] = useState("");
+  const [date, setDate] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
     let postReview = {
-      firstName: firstName,
-      lastName: lastName,
-      review: review,
+      description: review,
+      date_published: date,
     };
-    fetch("localhost:9292/critics", {
+    fetch("http://localhost:9292/reviews", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(postReview),
@@ -27,27 +25,20 @@ const ReviewForm = ({ addNewReview }) => {
         <h3>Add A Review</h3>
         <form onSubmit={handleSubmit}>
           <input
-            label="First Name"
-            placeholder="First Name"
-            value={firstName}
-            onChange={(e) => setFirstName(e.target.value)}
-          />
-
-          <input
-            label="Last Name"
-            placeholder="Last Name"
-            value={lastName}
-            onChange={(e) => setLastName(e.target.value)}
-          />
-
-          <input
             label="review"
             placeholder="Review"
             value={review}
             onChange={(e) => setReview(e.target.value)}
           />
+          <input
+            label="Date Published"
+            placeholder="Date Published"
+            value={date}
+            onChange={(e) => setDate(e.target.value)}
+          />
+
           <br />
-          <input type="Submit" value="Add Review" className="button"/>
+          <input type="Submit" value="Add Review" className="button" />
         </form>
       </div>
     </div>

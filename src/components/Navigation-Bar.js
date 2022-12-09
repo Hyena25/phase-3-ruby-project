@@ -11,7 +11,7 @@ const NavBar = () => {
       <nav className="navbar">
         <div className="nav-container">
           <Link as={Link} to="/" className="nav-logo">
-            Placeholder
+            Yap
           </Link>
           <ul className={click ? "nav-menu active" : "nav-menu"}>
             {/* <li className="nav-item">
